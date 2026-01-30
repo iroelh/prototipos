@@ -587,3 +587,87 @@ body{
 }
 .callout h3{ margin: 0 0 10px; font-size: 15px; }
 .callout p{ margin: 0; color: rgba(15, 23, 42, .78); }
+
+
+/* ===== Creative tweaks ===== */
+.orb{ animation: floaty 10s ease-in-out infinite; }
+.orb--b{ animation-delay: -2s; }
+.orb--c{ animation-delay: -4s; }
+.orb--d{ animation-delay: -6s; }
+
+@keyframes floaty{
+  0%, 100%{ transform: translateY(0px) translateX(0px); }
+  50%{ transform: translateY(-10px) translateX(6px); }
+}
+
+/* ===== Tabs (pestañas desplegables) ===== */
+.tabs{
+  display: grid;
+  gap: 12px;
+}
+
+.tab{
+  border-radius: var(--radius);
+  border: 1px solid rgba(11, 18, 32, .10);
+  background:
+    radial-gradient(720px 240px at 14% 0%, rgba(200,16,46,.10), transparent 62%),
+    radial-gradient(720px 240px at 72% 0%, rgba(245,158,11,.08), transparent 62%),
+    rgba(255,255,255,.88);
+  box-shadow: var(--shadow2);
+  overflow: hidden;
+}
+
+.tab summary{
+  cursor: pointer;
+  list-style: none;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px;
+  font-weight: 950;
+  color: rgba(11, 18, 32, .90);
+}
+
+.tab summary::-webkit-details-marker{ display:none; }
+
+.tab__icon{
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  border-radius: 16px;
+  border: 1px solid rgba(11, 18, 32, .10);
+  background: rgba(255,255,255,.86);
+  box-shadow: 0 10px 22px rgba(11, 18, 32, .10);
+  font-size: 20px;
+}
+
+.tab__title{
+  font-size: 14px;
+  line-height: 1.25;
+}
+
+.tab__hint{
+  font-size: 12px;
+  font-weight: 850;
+  color: rgba(11, 18, 32, .62);
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(11, 18, 32, .10);
+  background: rgba(255,255,255,.70);
+}
+
+.tab[open] summary .tab__hint{ color: rgba(200,16,46,.85); }
+
+.tab__content{ padding: 0 16px 16px; }
+
+.tiny{
+  font-size: 11px;
+  color: rgba(11, 18, 32, .60);
+  font-weight: 800;
+}
+
+.guideTable--campbell td{ font-size: 12.7px; }
+.guideTable--campbell td.evi{ font-weight: 750; }
+
+/* Small polish for warning tab */
+.tab summary:hover .tab__hint{ background: rgba(255,255,255,.86); }
